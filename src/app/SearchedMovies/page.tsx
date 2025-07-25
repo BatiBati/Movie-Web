@@ -1,8 +1,6 @@
 "use client";
-
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-
 import { useEffect, useState } from "react";
 import { GenreCard } from "../MovieGenrePage/_components/GenreCard";
 import {
@@ -76,19 +74,16 @@ export default function SearchedMovies() {
   const handlePage = (page: number) => {
     setPage(page);
   };
-
   const selectedPageNumber = [page - 1, page, page + 1].filter(
     (number) => number > 1 && lastPage > number
   );
-  console.log(searchedMovies.length);
-
   return (
     <div className="flex justify-center">
       <div className="flex flex-col p-6 gap-8">
         <div className="text-3xl font-semibold">Search filter</div>
         <div className="flex w-[1280px] justify-between">
           <div className="w-[80%] h-fit text-2xl font-semibold flex flex-col gap-y-6 border-r-2 ">
-            {searchedMovies.length} results for "{searchValue}"
+            {searchedMovies.length} results for {searchValue}
             {searchedMovies.length === 0 && (
               <div className="w-full flex justify-center text-2xl font-light">
                 No results
@@ -156,8 +151,8 @@ export default function SearchedMovies() {
                       );
                     })}
                     {page !== lastPage &&
-                    page + 1 !== lastPage - 1 &&
-                    page !== lastPage - 1 ? (
+                      page + 1 !== lastPage - 1 &&
+                      page !== lastPage - 1 ? (
                       <PaginationItem>
                         <PaginationEllipsis />
                       </PaginationItem>

@@ -19,6 +19,7 @@ import { Arrow } from "../MovieGenrePage/assets/Arrow";
 import { useSearchParams } from "next/navigation";
 import { ChangeEvent } from "react";
 import { YellowStar } from "./assets/YellowStar";
+import Image from "next/image";
 
 type JumpToHomePage = {
   href: string;
@@ -184,7 +185,7 @@ export const Header = ({ href }: JumpToHomePage) => {
                       key={movie.id}
                     >
                       <div className="w-[70px] rounded-[8px] overflow-hidden">
-                        <img
+                        <Image
                           className="w-[67px] h-[100px]"
                           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                           alt={movie.original_title}
@@ -226,7 +227,7 @@ export const Header = ({ href }: JumpToHomePage) => {
               </div>
               <Link href={`/SearchedMovies?searchValue=${searchValue}`}>
                 <div className="px-4 py-2 text-[14px] font-normal">
-                  See all results for "{searchValue}"
+                  See all results for {searchValue}
                 </div>
               </Link>
             </div>

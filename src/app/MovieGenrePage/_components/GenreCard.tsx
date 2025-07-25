@@ -1,13 +1,10 @@
 "use client";
-
 import { YellowStar } from "@/app/_components/assets/YellowStar";
-
 type CardType = {
   rate: number;
   imageUrl: string;
   movieName: string;
 };
-
 export const GenreCard = ({ rate, imageUrl, movieName }: CardType) => {
   return (
     <div className=" h-[330px] bg-[#e5e5e5] rounded-2xl overflow-hidden cursor-pointer">
